@@ -1,5 +1,5 @@
 ---
-name: Logseq Guide
+name: logseq-guide
 description: This skill should be used when interacting with Logseq in any capacity — reading pages, fetching blocks, resolving "{{embed}}" references, querying content, or when the user mentions "Logseq", "block UUID", "embedded blocks", "referenced content", or page names in [[double bracket]] notation. It provides best practices for choosing between MCP tools and the direct Logseq API.
 ---
 

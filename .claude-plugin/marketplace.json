@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ethans-plugins",
+  "description": "Ethan's personal Claude Code plugins",
+  "owner": {
+    "name": "Ethan"
+  },
+  "plugins": [
+    {
+      "name": "conversational-context-transfer",
+      "description": "Guides structured conversational extraction to build rich, Claude-optimized context documents about people, projects, or domains",
+      "source": "./plugins/conversational-context-transfer"
+    },
+    {
+      "name": "logseq-guide",
+      "description": "Skill for working with Logseq",
+      "source": "./plugins/logseq-guide"
+    },
+    {
+      "name": "structured-conversation",
+      "description": "Output style for dialogue-driven work: context transfer, design discussions, brainstorming. Conversational thinking partner with file-as-working-memory discipline.",
+      "source": "./plugins/structured-conversation"
+    }
+  ]
+}

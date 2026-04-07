@@ -1,0 +1,8 @@
+{
+  "name": "structured-conversation",
+  "version": "1.0.0",
+  "description": "Output style for dialogue-driven work: context transfer, design discussions, brainstorming. Replaces coding instructions with conversational thinking partner behavior and strong file-as-working-memory discipline.",
+  "author": {
+    "name": "Ethan"
+  }
+}

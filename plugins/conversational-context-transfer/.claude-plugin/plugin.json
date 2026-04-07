@@ -1,0 +1,8 @@
+{
+  "name": "conversational-context-transfer",
+  "version": "1.0.0",
+  "description": "Guides structured conversational extraction to build rich, Claude-optimized context documents about people, projects, or domains",
+  "author": {
+    "name": "Ethan"
+  }
+}

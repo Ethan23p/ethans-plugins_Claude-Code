@@ -15,11 +15,11 @@
       }
     },
     {
-      "name": "logseq-guide",
-      "description": "Skill for working with Logseq",
+      "name": "logseq-development",
+      "description": "Deep reference skill for Logseq DB plugin development — covers @logseq/libs SDK, MCP server tools, the Logseq CLI, DataScript schema, and Datalog queries.",
       "source": {
         "source": "github",
-        "repo": "Ethan23p/logseq-guide"
+        "repo": "Ethan23p/logseq-development"
       }
     },
     {

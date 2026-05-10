@@ -23,6 +23,11 @@
       }
     },
     {
+      "name": "logseq-mcp",
+      "description": "Wires Logseq's bundled MCP server (`logseq mcp-server --stdio`) into Claude Code / Cowork so the agent shares your live graph with the running desktop app.",
+      "source": "./logseq-mcp"
+    },
+    {
       "name": "structured-conversation-output-style",
       "description": "Output style for dialogue-driven work: context transfer, design discussions, brainstorming. Conversational thinking partner with file-as-working-memory discipline.",
       "source": {

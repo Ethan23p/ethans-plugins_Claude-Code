@@ -1,0 +1,14 @@
+{
+  "name": "logseq-mcp",
+  "version": "0.1.0",
+  "description": "Wires Logseq's bundled MCP server into Claude Code / Cowork. Talks to the running Logseq desktop app via its local HTTP API server, so the agent and the editor share the same live graph.",
+  "author": {
+    "name": "Ethan"
+  },
+  "mcpServers": {
+    "logseq": {
+      "command": "logseq",
+      "args": ["mcp-server", "--stdio"]
+    }
+  }
+}

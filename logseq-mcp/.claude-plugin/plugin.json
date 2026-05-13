@@ -8,7 +8,10 @@
   "mcpServers": {
     "logseq": {
       "type": "http",
-      "url": "http://127.0.0.1:12315/mcp"
+      "url": "http://127.0.0.1:12315/mcp",
+      "headers": {
+        "Authorization": "Bearer ${LOGSEQ_API_SERVER_TOKEN}"
+      }
     }
   }
 }

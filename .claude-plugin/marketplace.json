@@ -25,7 +25,7 @@
     },
     {
       "name": "logseq-mcp",
-      "description": "Wires Logseq's bundled MCP server (`logseq mcp-server --stdio`) into Claude Code / Cowork so the agent shares your live graph with the running desktop app.",
+      "description": "Wires Logseq's bundled MCP server into Claude Code so the agent shares your live graph with the running desktop app.",
       "source": "./logseq-mcp"
     },
     {

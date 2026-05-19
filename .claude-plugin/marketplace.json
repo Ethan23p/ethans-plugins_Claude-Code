@@ -16,25 +16,17 @@
       }
     },
     {
-      "name": "logseq-development",
-      "description": "Deep reference skill for Logseq DB plugin development — covers @logseq/libs SDK, MCP server tools, the Logseq CLI, DataScript schema, and Datalog queries.",
-      "source": {
-        "source": "github",
-        "repo": "Ethan23p/logseq-development"
-      }
-    },
-    {
-      "name": "logseq-mcp",
-      "description": "Wires Logseq's bundled MCP server into Claude Code so the agent shares your live graph with the running desktop app.",
-      "source": "./logseq-mcp"
-    },
-    {
       "name": "structured-conversation-output-style",
       "description": "Output style for dialogue-driven work: context transfer, design discussions, brainstorming. Conversational thinking partner with file-as-working-memory discipline.",
       "source": {
         "source": "github",
         "repo": "Ethan23p/structured-conversation-output-style"
       }
+    },
+    {
+      "name": "logseq-interface",
+      "description": "Agentic Logseq graph access — inspect and edit pages, blocks, tasks, tags, and properties; run Datascript queries; manage graphs and servers.",
+      "source": "./logseq-interface"
     }
   ]
 }

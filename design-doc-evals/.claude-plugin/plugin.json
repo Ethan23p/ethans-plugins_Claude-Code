@@ -1,0 +1,8 @@
+{
+  "name": "design-doc-evals",
+  "version": "1.0.0",
+  "description": "Authors the Testing & Evaluation section of a software design document — derives the checkable assertions from your Vision, Goal State, Guiding Principles, and Technical Spec, then surfaces the judgment calls (thresholds, acceptance bars) as questions rather than confabulating them.",
+  "author": {
+    "name": "Ethan Porter"
+  }
+}

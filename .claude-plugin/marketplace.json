@@ -27,6 +27,11 @@
       "name": "logseq-interface",
       "description": "Agentic Logseq graph access — inspect and edit pages, blocks, tasks, tags, and properties; run Datascript queries; manage graphs and servers.",
       "source": "./logseq-interface"
+    },
+    {
+      "name": "design-patterns",
+      "description": "Skills for implementing recurring agentic design patterns.",
+      "source": "./design-patterns"
     }
   ]
 }

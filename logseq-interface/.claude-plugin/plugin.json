@@ -1,7 +1,7 @@
 {
   "name": "logseq-interface",
-  "version": "0.1.0",
-  "description": "Agentic Logseq graph access via the logseq CLI — inspect and edit pages, blocks, tasks, tags, and properties; run Datascript queries; manage graphs and servers.",
+  "version": "0.2.0",
+  "description": "Agentic Logseq graph access via the logseq CLI — defers to the CLI's self-documentation and adds environment defaults plus graph semantics the CLI does not explain.",
   "author": {
     "name": "Ethan Porter"
   }

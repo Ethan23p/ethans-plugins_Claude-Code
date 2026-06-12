@@ -1,22 +1,44 @@
 ---
 name: logseq-interface
-description: Operate the Logseq command-line interface to inspect or modify graphs, pages, blocks, tasks, tags, and properties; run Datascript queries; show page/block trees; manage graphs and db-worker-node servers. Use when a request involves running `logseq` commands or interpreting CLI output.
+description: This skill should be used when a request involves a Logseq graph — reading or writing pages, blocks, tasks, tags, or properties; running Datascript queries; or running and interpreting `logseq` CLI commands. Also applies when requests mention the user's notes, journal entries, or personal knowledge base without naming Logseq.
 ---
 
-# Logseq CLI
+# Logseq Interface
 
-Before executing any logseq commands, run the following to load the full, up-to-date skill documentation from the CLI itself:
+Guidance for the `logseq` CLI. The CLI documents itself well; this skill covers only what it doesn't — environment defaults and graph semantics.
 
-```bash
-logseq skill show
-```
+## Load CLI documentation first
 
-Read that output in full before proceeding. It is the authoritative source for command usage, anti-patterns, and best practices — do not rely on memory or prior context instead.
+Run `logseq skill show` and read the output in full before any other command. It is the authoritative source for command usage, anti-patterns, and best practices — defer to it over memory or prior context. Before any unfamiliar command, check `logseq <command> --help` and `logseq example <command>`; options change as the CLI evolves.
 
-## Quick orientation
+## Graph resolution
 
-- `logseq --help` — top-level commands and global flags
-- `logseq <command> --help` — command-specific options
-- `logseq example <command>` — runnable examples (source of truth for syntax)
-- `logseq graph list` — list available graphs; use `-g <name>` to target one
-- `--output json` — machine-readable output when you need to parse results
+Default: the graph is `Logseq-DB-Desktop-Epictetus` — use it directly, no discovery call needed.
+
+Fallback: if that graph errors, run `logseq graph list` and pick the obvious match; ask only if several plausibly match.
+
+## Reading
+
+- Use `--output json` for anything that will be parsed or quoted; human output carries ANSI codes and tree glyphs.
+- `show --page <title> --output json` returns the full block tree, a `uuid->label` map, and a trailing `linked-references` section. The tail cannot be suppressed; expect it to be large on heavily-referenced pages.
+- `show --id` accepts one db/id or an EDN vector of ids — the precise multi-block fetch.
+- One full-page call beats piecemeal reads; large output is acceptable and preferred over too little.
+
+## Graph semantics the CLI does not explain
+
+- Embedded blocks materialize inline as children whose `block/page` is a *different* page. Check `block/page` before assuming a block is local to the page being read.
+- `[[Bracketed titles]]` may resolve to blocks, not pages. If `show --page` returns page-not-found, fall back to `search block --content` → `show --id`.
+- `((uuid))` in content is a block reference; resolve it via the `uuid->label` map or `show`.
+- db/ids are terse and stable within a session; UUIDs are durable. Use UUIDs in anything written back as a lasting reference.
+- `show` omits `block/created-at` / `block/updated-at`. Recency questions require a Datascript `query` selecting those attributes.
+
+## Writing
+
+- Whole block trees can be authored in one call: `upsert block --blocks-file <file.edn>` with nested `:block/children`. Prefer this over per-block calls for any hierarchical content.
+- `--target-id` appends children to an existing block; `--parent` is not a valid option.
+- Upsert output confirms the write — do not re-`show` the page to verify.
+- Shell quoting is the main write friction; prefer `--blocks-file` for prose containing apostrophes or quotes.
+
+## Feedback
+
+Record observations about this interface — friction, surprises, corrections — on the graph page `Logseq Interface` under "Direct Feedback from Claude instances (not verified)": append children under that heading block via `--target-id`, creating the section if absent. Verified items get promoted into this skill; do not edit this skill directly from a single session's experience.

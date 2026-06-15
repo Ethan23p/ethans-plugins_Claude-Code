@@ -27,6 +27,11 @@
       "name": "logseq-interface",
       "description": "Agentic Logseq graph access via the logseq CLI — defers to the CLI's self-documentation and adds environment defaults plus graph semantics the CLI does not explain.",
       "source": "./logseq-interface"
+    },
+    {
+      "name": "design-doc-evals",
+      "description": "Authors the Testing & Evaluation section of a software design document — derives the checkable assertions from your Vision, Goal State, Guiding Principles, and Technical Spec, then surfaces the judgment calls (thresholds, acceptance bars) as questions rather than confabulating them.",
+      "source": "./design-doc-evals"
     }
   ]
 }

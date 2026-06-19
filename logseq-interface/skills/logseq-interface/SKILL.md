@@ -20,7 +20,7 @@ Fallback: if that graph errors, run `logseq graph list` and pick the obvious mat
 ## Reading
 
 - Use `--output json` for anything that will be parsed or quoted; human output carries ANSI codes and tree glyphs.
-- `show --page <title> --output json` returns the full block tree, a `uuid->label` map, and a trailing `linked-references` section. Pass `--linked-references false` to suppress it; omit or set `true` when references are needed.
+- `show --page <title> --output json --linked-references false` returns the full block tree and a `uuid->label` map. Omit `--linked-references false` only when linked references are explicitly needed for the task.
 - `show --id` accepts one db/id or an EDN vector of ids — the precise multi-block fetch.
 - One full-page call beats piecemeal reads; large output is acceptable and preferred over too little.
 

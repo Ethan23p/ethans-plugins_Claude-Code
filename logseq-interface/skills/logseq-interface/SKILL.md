@@ -20,7 +20,7 @@ Fallback: if that graph errors, run `logseq graph list` and pick the obvious mat
 ## Reading
 
 - Use `--output json` for anything that will be parsed or quoted; human output carries ANSI codes and tree glyphs.
-- `show --page <title> --output json` returns the full block tree, a `uuid->label` map, and a trailing `linked-references` section. The tail cannot be suppressed; expect it to be large on heavily-referenced pages.
+- `show --page <title> --output json` returns the full block tree, a `uuid->label` map, and a trailing `linked-references` section. Pass `--linked-references false` to suppress it; omit or set `true` when references are needed.
 - `show --id` accepts one db/id or an EDN vector of ids — the precise multi-block fetch.
 - One full-page call beats piecemeal reads; large output is acceptable and preferred over too little.
 
@@ -36,8 +36,16 @@ Fallback: if that graph errors, run `logseq graph list` and pick the obvious mat
 
 - Whole block trees can be authored in one call: `upsert block --blocks-file <file.edn>` with nested `:block/children`. Prefer this over per-block calls for any hierarchical content.
 - `--target-id` appends children to an existing block; `--parent` is not a valid option.
-- Upsert output confirms the write — do not re-`show` the page to verify.
+- `upsert block --id --content` (update mode) silently truncates at the first newline — only line 1 is stored; the rest is dropped without error. For multi-line blocks, delete and recreate under the parent using `--blocks-file`.
+- Upsert output confirms the write for single-line content; for multi-line, read back to confirm.
 - Shell quoting is the main write friction; prefer `--blocks-file` for prose containing apostrophes or quotes.
+
+## Block structure conventions
+
+- Heading blocks are heading-only — content always goes in a child block, never on the same block as the heading.
+- Subtitle exception: a one-liner subtitle may live on line 2 of the heading block (real newline in the EDN string). Remaining body goes in a child of that block. Use selectively.
+- Paragraph breaks within a prose block use a blank line (two newlines in the EDN string). Two related paragraphs belong in one block — do not split them into siblings.
+- Parallel/enumerable items (lists, taxonomy entries, procedure steps) are each their own sibling child block. Do not pack them into a single multi-line block.
 
 ## Feedback
 

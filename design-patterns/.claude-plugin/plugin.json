@@ -1,0 +1,8 @@
+{
+  "name": "design-patterns",
+  "version": "0.1.0",
+  "description": "Design patterns for authoring Claude Code skills — currently: constructing tacit-knowledge skills that load a source text verbatim as framing context rather than distilling it into procedures.",
+  "author": {
+    "name": "Ethan Porter"
+  }
+}

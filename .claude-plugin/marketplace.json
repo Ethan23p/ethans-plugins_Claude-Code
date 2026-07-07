@@ -32,6 +32,11 @@
       "name": "design-doc-evals",
       "description": "Authors the Testing & Evaluation section of a software design document — derives the checkable assertions from your Vision, Goal State, Guiding Principles, and Technical Spec, then surfaces the judgment calls (thresholds, acceptance bars) as questions rather than confabulating them.",
       "source": "./design-doc-evals"
+    },
+    {
+      "name": "design-patterns",
+      "description": "Design patterns for authoring Claude Code skills — currently: constructing tacit-knowledge skills that load a source text verbatim as framing context rather than distilling it into procedures.",
+      "source": "./design-patterns"
     }
   ]
 }

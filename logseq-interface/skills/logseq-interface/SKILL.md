@@ -19,23 +19,23 @@ Fallback: if that graph errors, run `logseq graph list` and pick the obvious mat
 
 ## Reading
 
-- Use `--output json` for anything that will be parsed or quoted; human output carries ANSI codes and tree glyphs.
-- `show --page <title> --output json --linked-references false` returns the full block tree and a `uuid->label` map. Omit `--linked-references false` only when linked references are explicitly needed for the task.
+- Default to human output — it prints the db/id on every line and stays readable; pair it with `--linked-references false`. Reach for `--output json` only when you specifically need per-block `block/refs` (unambiguous ref bindings), timestamps and other metadata, or programmatic parsing.
+- `show --page <title> --linked-references false` returns the full block tree; omit `--linked-references false` only when linked references are explicitly needed. There is no `uuid->label` map — refs serialize as bare `{:db/id N}`; take the label from the target node's `block/title` (json) or the Referenced Entities footer (human).
 - `show --id` accepts one db/id or an EDN vector of ids — the precise multi-block fetch.
 - One full-page call beats piecemeal reads; large output is acceptable and preferred over too little.
 
 ## Graph semantics the CLI does not explain
 
 - Embedded blocks materialize inline as children whose `block/page` is a *different* page. Check `block/page` before assuming a block is local to the page being read.
-- `[[Bracketed titles]]` may resolve to blocks, not pages. If `show --page` returns page-not-found, fall back to `search block --content` → `show --id`.
-- `((uuid))` in content is a block reference; resolve it via the `uuid->label` map or `show`.
+- `[[Bracketed titles]]` may resolve to blocks, not pages. If `show --page` returns page-not-found and you arrived from a referring page, reuse the db/id already in that page's `block/refs` (json) or Referenced Entities footer (human); fall back to `search block --content` → `show --id` only when there is no referring page — on common words it returns large, low-signal output.
+- In-content references render as `[[title]]` in a DB graph (this skill's default); the `((uuid))` block-ref form is MD-graph-only. Resolve a ref via the target's `block/title` or `show`.
 - db/ids are terse and stable within a session; UUIDs are durable. Use UUIDs in anything written back as a lasting reference.
-- `show` omits `block/created-at` / `block/updated-at`. Recency questions require a Datascript `query` selecting those attributes.
+- Human `show` omits `block/created-at` / `block/updated-at`, but `--output json` carries both on every node — read the json and recency questions need no separate Datascript `query`.
 
 ## Writing
 
 - Whole block trees can be authored in one call: `upsert block --blocks-file <file.edn>` with nested `:block/children`. Prefer this over per-block calls for any hierarchical content.
-- `--target-id` appends children to an existing block; `--parent` is not a valid option.
+- `--target-id` places a block relative to an existing one; `--pos` chooses where (`first-child` / `last-child` / `sibling`), defaulting to a child when omitted. `--parent` is not a valid option.
 - `upsert block --id --content` (update mode) silently truncates at the first newline — only line 1 is stored; the rest is dropped without error. For multi-line blocks, delete and recreate under the parent using `--blocks-file`.
 - Upsert output confirms the write for single-line content; for multi-line, read back to confirm.
 - Shell quoting is the main write friction; prefer `--blocks-file` for prose containing apostrophes or quotes.

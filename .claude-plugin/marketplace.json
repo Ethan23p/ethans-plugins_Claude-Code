@@ -37,6 +37,11 @@
       "name": "design-patterns",
       "description": "Design patterns for authoring Claude Code skills — currently: constructing tacit-knowledge skills that load a source text verbatim as framing context rather than distilling it into procedures.",
       "source": "./design-patterns"
+    },
+    {
+      "name": "tacit-frames",
+      "description": "Tacit-knowledge skills — each loads one source text verbatim as ambient framing context rather than distilling it into procedures. Currently: Anthropic's \"Demystifying evals for AI agents\".",
+      "source": "./tacit-frames"
     }
   ]
 }

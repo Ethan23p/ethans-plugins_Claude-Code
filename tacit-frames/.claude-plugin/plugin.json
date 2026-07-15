@@ -1,0 +1,8 @@
+{
+  "name": "tacit-frames",
+  "version": "0.1.0",
+  "description": "Tacit-knowledge skills — each loads one source text verbatim as ambient framing context rather than distilling it into procedures. Currently: Anthropic's \"Demystifying evals for AI agents\".",
+  "author": {
+    "name": "Ethan Porter"
+  }
+}

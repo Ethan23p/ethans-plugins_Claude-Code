@@ -13,7 +13,7 @@ Run `logseq skill show` and read the output in full before any other command. It
 
 ## Graph resolution
 
-Default: the graph is `Logseq-DB-desktop` — use it directly, no discovery call needed.
+Default graph: `${user_config.default_graph}` — use it directly, no discovery call needed.
 
 Fallback: if that graph errors, run `logseq graph list` and pick the obvious match; ask only if several plausibly match.
 

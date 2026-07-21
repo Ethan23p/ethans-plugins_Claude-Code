@@ -1,8 +1,16 @@
 {
   "name": "logseq-interface",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "Agentic Logseq graph access via the logseq CLI — defers to the CLI's self-documentation and adds environment defaults plus graph semantics the CLI does not explain.",
   "author": {
     "name": "Ethan Porter"
+  },
+  "userConfig": {
+    "default_graph": {
+      "type": "string",
+      "title": "Default Logseq graph",
+      "description": "Name of the Logseq graph to use by default, without prompting for discovery.",
+      "required": true
+    }
   }
 }

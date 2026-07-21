@@ -10,7 +10,6 @@
       "type": "string",
       "title": "Default Logseq graph",
       "description": "Name of the Logseq graph to use by default, without prompting for discovery.",
-      "default": "Logseq-DB-desktop",
       "required": true
     }
   }

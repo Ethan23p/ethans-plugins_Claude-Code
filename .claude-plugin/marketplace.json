@@ -42,6 +42,11 @@
       "name": "tacit-frames",
       "description": "Tacit-knowledge skills — each loads one source text verbatim as ambient framing context rather than distilling it into procedures. Currently: Anthropic's \"Demystifying evals for AI agents\".",
       "source": "./tacit-frames"
+    },
+    {
+      "name": "eval-harness",
+      "description": "Evaluate a system by having a real, controlled Claude instance operate it — a reference scenario runtime for the Claude Agent SDK (multi-turn sessions, deterministic gates, sandboxing, transcript and cost capture), plus the SDK's undocumented behavioral facts, each version-stamped and shipped with an executable check rather than asserted from memory.",
+      "source": "./eval-harness"
     }
   ]
 }

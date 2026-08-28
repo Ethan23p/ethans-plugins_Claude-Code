@@ -1,0 +1,8 @@
+{
+  "name": "eval-harness",
+  "version": "0.1.0",
+  "description": "Evaluate a system by having a real, controlled Claude instance operate it — a reference scenario runtime for the Claude Agent SDK, plus the SDK's undocumented behavioral facts, each version-stamped and shipped with an executable check rather than asserted from memory.",
+  "author": {
+    "name": "Ethan Porter"
+  }
+}

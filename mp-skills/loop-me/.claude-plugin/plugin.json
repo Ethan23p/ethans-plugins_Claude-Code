@@ -1,0 +1,8 @@
+{
+  "name": "loop-me",
+  "version": "0.1.0",
+  "description": "Grill me about specs for the workflows I want to build, within this workspace.",
+  "author": {
+    "name": "Ethan Porter"
+  }
+}

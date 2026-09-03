@@ -1,7 +1,7 @@
 {
   "name": "retro",
   "version": "0.1.0",
-  "description": "\"Conduct a retrospective on a coding session.\"",
+  "description": "Conduct a retrospective on a coding session.",
   "author": {
     "name": "Ethan Porter"
   }

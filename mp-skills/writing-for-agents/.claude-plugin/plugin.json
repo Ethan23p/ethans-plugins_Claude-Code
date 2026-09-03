@@ -1,0 +1,8 @@
+{
+  "name": "writing-for-agents",
+  "version": "0.1.0",
+  "description": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.",
+  "author": {
+    "name": "Ethan Porter"
+  }
+}

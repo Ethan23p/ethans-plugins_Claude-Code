@@ -25,27 +25,27 @@
     },
     {
       "name": "logseq-interface",
-      "description": "Agentic Logseq graph access via the logseq CLI \u2014 defers to the CLI's self-documentation and adds environment defaults plus graph semantics the CLI does not explain.",
+      "description": "Agentic Logseq graph access via the logseq CLI — defers to the CLI's self-documentation and adds environment defaults plus graph semantics the CLI does not explain.",
       "source": "./logseq-interface"
     },
     {
       "name": "design-doc-evals",
-      "description": "Authors the Testing & Evaluation section of a software design document \u2014 derives the checkable assertions from your Vision, Goal State, Guiding Principles, and Technical Spec, then surfaces the judgment calls (thresholds, acceptance bars) as questions rather than confabulating them.",
+      "description": "Authors the Testing & Evaluation section of a software design document — derives the checkable assertions from your Vision, Goal State, Guiding Principles, and Technical Spec, then surfaces the judgment calls (thresholds, acceptance bars) as questions rather than confabulating them.",
       "source": "./design-doc-evals"
     },
     {
       "name": "design-patterns",
-      "description": "Design patterns for authoring Claude Code skills \u2014 currently: constructing tacit-knowledge skills that load a source text verbatim as framing context rather than distilling it into procedures.",
+      "description": "Design patterns for authoring Claude Code skills — currently: constructing tacit-knowledge skills that load a source text verbatim as framing context rather than distilling it into procedures.",
       "source": "./design-patterns"
     },
     {
       "name": "tacit-frames",
-      "description": "Tacit-knowledge skills \u2014 each loads one source text verbatim as ambient framing context rather than distilling it into procedures. Currently: Anthropic's \"Demystifying evals for AI agents\".",
+      "description": "Tacit-knowledge skills — each loads one source text verbatim as ambient framing context rather than distilling it into procedures. Currently: Anthropic's \"Demystifying evals for AI agents\".",
       "source": "./tacit-frames"
     },
     {
       "name": "eval-harness",
-      "description": "Evaluate a system by having a real, controlled Claude instance operate it \u2014 a reference scenario runtime for the Claude Agent SDK (multi-turn sessions, deterministic gates, sandboxing, transcript and cost capture), plus the SDK's undocumented behavioral facts, each version-stamped and shipped with an executable check rather than asserted from memory.",
+      "description": "Evaluate a system by having a real, controlled Claude instance operate it — a reference scenario runtime for the Claude Agent SDK (multi-turn sessions, deterministic gates, sandboxing, transcript and cost capture), plus the SDK's undocumented behavioral facts, each version-stamped and shipped with an executable check rather than asserted from memory.",
       "source": "./eval-harness"
     },
     {

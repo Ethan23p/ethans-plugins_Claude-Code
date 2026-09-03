@@ -40,7 +40,7 @@
     },
     {
       "name": "tacit-frames",
-      "description": "Tacit-knowledge skills — each loads one source text verbatim as ambient framing context rather than distilling it into procedures. Currently: Anthropic's \"Demystifying evals for AI agents\".",
+      "description": "Tacit-knowledge skills — each loads one source text verbatim as ambient framing context rather than distilling it into procedures. Currently: Anthropic's \"Demystifying evals for AI agents\" and \"Scaling Managed Agents: Decoupling the brain from the hands\".",
       "source": "./tacit-frames"
     },
     {

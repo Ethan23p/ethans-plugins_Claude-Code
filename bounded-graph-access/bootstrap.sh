@@ -84,7 +84,7 @@ run_tests() {
   local pkg="$1"
   command -v node >/dev/null 2>&1 || { warn "node not found; skipping tests"; return 0; }
   ( cd "$pkg" && node --test test/boundary.test.js test/guard.test.js >/dev/null 2>&1 ) \
-    && ok "tests pass (26 offline checks, no graph needed)" \
+    && ok "test suite passes (offline, no graph needed)" \
     || warn "tests did not pass in $pkg — install anyway at your own risk"
 }
 

@@ -129,6 +129,16 @@ Fuller guidance, the current state of the feature, and its open work:
   `show --id <id> --output json` — `block/title` carries a real `\n`.
 - **Upsert output confirms nothing.** Both create and update return a bare
   `result  -` with no content echoed. Read back when the write matters.
+- **Blocks move.** `upsert block --id <existing> --target-id <new parent>
+  --pos <position>` relocates rather than edits: the block keeps its `db/id`
+  and its descendants travel with it. This is the CLI's own third `upsert
+  block` example, where it reads as an edit and is easy to miss. It makes
+  reorganizing non-destructive — prefer it over delete-and-recreate, which
+  breaks ids and refs.
+  *Verify (2026-09-06):* build `A > payload` and a sibling `B`; move `payload`
+  under `B`, then move `B` under `A`. Read back — `A > B > payload`, all three
+  ids unchanged.
+- `remove block --id` takes the block's descendants with it.
 - Batch *create* of a tree works in one call; batch *update* does not — each
   existing block is its own call.
 - Task state is structured data, not content: `upsert task --status <status>`,

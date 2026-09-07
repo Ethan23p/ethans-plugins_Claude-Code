@@ -1,0 +1,18 @@
+{
+  "description": "Auto-loads `logseq skill show` and `logseq graph list` output as context whenever the logseq-interface skill is invoked, so Claude doesn't have to spend a turn calling them itself.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/preload-logseq.js\"",
+            "if": "Skill(logseq-interface)",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

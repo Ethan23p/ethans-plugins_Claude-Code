@@ -9,13 +9,13 @@ Guidance for the `logseq` CLI. The CLI documents itself well; this skill covers 
 
 ## Load CLI documentation first
 
-Run `logseq skill show` and read the output in full before any other command. It is the authoritative source for command usage, anti-patterns, and best practices — defer to it over memory or prior context. Before any unfamiliar command, check `logseq <command> --help` and `logseq example <command>`; options change as the CLI evolves.
+The output of `logseq skill show` and `logseq graph list` is already preloaded above as context — a PreToolUse hook (`hooks/preload-logseq.js`) runs them automatically whenever this skill is invoked, so there's no need to call either yourself. Read the `skill show` output in full before any other command: it is the authoritative source for command usage, anti-patterns, and best practices — defer to it over memory or prior context. Before any unfamiliar command, check `logseq <command> --help` and `logseq example <command>`; options change as the CLI evolves.
 
 ## Graph resolution
 
 Default graph: `${user_config.default_graph}` — use it directly, no discovery call needed.
 
-Fallback: if that graph errors, run `logseq graph list` and pick the obvious match; ask only if several plausibly match.
+Fallback: if that graph errors, consult the preloaded `logseq graph list` output above and pick the obvious match; ask only if several plausibly match.
 
 ## Reading
 

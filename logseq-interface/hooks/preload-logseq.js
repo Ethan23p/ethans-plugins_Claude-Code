@@ -12,7 +12,11 @@
 
 const { execFileSync } = require('child_process');
 
-const TIMEOUT_MS = 10000;
+// Two calls run sequentially, so this must leave headroom under hooks.json's
+// own outer "timeout": 30 — otherwise the harness can kill the hook process
+// mid-flight, before it ever writes additionalContext, silently defeating
+// the fail-open design below.
+const TIMEOUT_MS = 12000;
 
 function run(args) {
   try {

@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Shell scripts must check out LF even on Windows. With core.autocrlf=true the
+# rule above hands them CRLF, and bash then reads the shebang as `bash\r` and
+# trails \r into every variable it sets.
+*.sh text eol=lf

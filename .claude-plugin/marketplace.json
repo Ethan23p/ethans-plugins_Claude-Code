@@ -49,6 +49,15 @@
       "source": "./eval-harness"
     },
     {
+      "name": "cog-graphs",
+      "description": "Spawn and manipulate Cog Graphs — persistent, structured stores (lists, inventories, knowledge bases) that an AI agent creates on demand and keeps in the User's own directory. Puts the `cog-graphs` CLI on PATH and primes the agent to drive it. Requires Bun.",
+      "source": {
+        "source": "git-subdir",
+        "url": "Ethan23p/Cog-Graphs",
+        "path": "engine"
+      }
+    },
+    {
       "name": "ask-matt",
       "description": "Ask which skill or flow fits your situation. A router over the skills in this repo.",
       "source": "./mp-skills/ask-matt"

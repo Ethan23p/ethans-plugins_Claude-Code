@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
-// PreToolUse hook, scoped by hooks.json's `if: "Skill(logseq-interface)"` to
-// fire only when that skill is invoked. Runs the two commands the skill used
+// PreToolUse hook, scoped by hooks.json's `if` rules to fire only when that
+// skill is invoked. The skill arrives under either its bare name or its
+// plugin-namespaced one (`logseq-interface:logseq-interface`), and an `if`
+// holds one rule, so hooks.json carries a handler for each. Runs the two commands the skill used
 // to tell Claude to call by hand (`logseq skill show`, `logseq graph list`)
 // and returns their output as additionalContext, so Claude sees them in the
 // same turn instead of spending two tool calls on it.
@@ -17,6 +19,8 @@ const { execFileSync } = require('child_process');
 // mid-flight, before it ever writes additionalContext, silently defeating
 // the fail-open design below.
 const TIMEOUT_MS = 12000;
+
+const SKILL_NAMES = ['logseq-interface', 'logseq-interface:logseq-interface'];
 
 function run(args) {
   try {
@@ -45,7 +49,7 @@ function main() {
     }
 
     const skill = input && input.tool_input && input.tool_input.skill;
-    if (skill !== 'logseq-interface') {
+    if (!SKILL_NAMES.includes(skill)) {
       process.exit(0);
     }
 

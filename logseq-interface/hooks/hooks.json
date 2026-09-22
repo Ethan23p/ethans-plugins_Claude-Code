@@ -10,6 +10,12 @@
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/preload-logseq.js\"",
             "if": "Skill(logseq-interface)",
             "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/preload-logseq.js\"",
+            "if": "Skill(logseq-interface:logseq-interface)",
+            "timeout": 30
           }
         ]
       }

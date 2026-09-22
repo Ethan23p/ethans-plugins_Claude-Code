@@ -1,6 +1,6 @@
 {
   "name": "logseq-interface",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Agentic access to Ethan's Logseq graph via the logseq CLI - defers to the CLI's self-documentation, and adds the boundary, graph semantics, and graph conventions it does not cover.",
   "author": {
     "name": "Ethan Porter"

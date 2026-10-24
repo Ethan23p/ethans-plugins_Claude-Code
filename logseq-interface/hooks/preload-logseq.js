@@ -66,7 +66,6 @@ function main() {
       JSON.stringify({
         hookSpecificOutput: {
           hookEventName: 'PreToolUse',
-          permissionDecision: 'abstain',
           additionalContext,
         },
       })

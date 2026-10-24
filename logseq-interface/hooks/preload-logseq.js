@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-// PreToolUse hook, scoped by hooks.json's `if` rules to fire only when that
-// skill is invoked. The skill arrives under either its bare name or its
-// plugin-namespaced one (`logseq-interface:logseq-interface`), and an `if`
-// holds one rule, so hooks.json carries a handler for each. Runs the two commands the skill used
+// PreToolUse hook on every Skill call; it filters to this skill itself, by
+// SKILL_NAMES below, and exits at once for any other. The skill arrives under
+// either its bare name or its plugin-namespaced one
+// (`logseq-interface:logseq-interface`). hooks.json once scoped this with
+// `if: Skill(...)` rules instead, and with them in place the hook never ran at
+// all (Claude Code 2.1.285 and 2.1.308, 10/24/26). Runs the two commands the skill used
 // to tell Claude to call by hand (`logseq skill show`, `logseq graph list`)
 // and returns their output as additionalContext, so Claude sees them in the
 // same turn instead of spending two tool calls on it.

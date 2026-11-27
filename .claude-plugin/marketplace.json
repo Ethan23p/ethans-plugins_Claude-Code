@@ -56,6 +56,11 @@
         "url": "Ethan23p/Cog-Graphs",
         "path": "engine"
       }
+    },
+    {
+      "name": "solarized-calm",
+      "description": "Claude Desktop theme mod: Solarized lightness re-hued to Claude’s terracotta, muted prose and roomier line spacing, tuned against halation and pattern glare (astigmatism, TV viewing).",
+      "source": "./solarized-calm"
     }
   ]
 }
